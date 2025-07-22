@@ -1,157 +1,48 @@
-An h1 header
+Week 1: Introduction to C++
 ============
 
-Paragraphs are separated by a blank line.
-
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
-look like:
-
-  * this one
-  * that one
-  * the other one
-
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
-
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
-
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-
-
-
-An h2 header
+The C++ Programming Language 
 ------------
+* C++ is a high-level and high-performance programming language that supports multiple programming paradigms including rocedural programming (step-by-step instructions), object-oriented programming (classes, inheritance, polymorphism), and generic programming (templates).
+* It is strongly typed (data types must be explicitly defined and are strictly enforced)
+* It is compiled (code is translated into machine code before it runs, making execution fast)
+* It allows low-level memory control through pointers and dynamic memory. 
+* C++ is one of the most popular languages in the games industry.
 
-Here's a numbered list:
+Visual Studio IDE
+-----------
+* Visual Studio is an Integrated Development Environment (IDE) developed by Microsoft. 
+* It provides tools for writing and editing C++ code
+* As well as compiling and debugging C++ programs. 
+* We will be using Visual Studio 2022 throughout this module.
+* It is already installed on lab PCs, but you can install Visual Studio (not Visual Studio Code) on your personal device by downloading the installer at [visualstudio.microsoft.com](https://visualstudio.microsoft.com/)
 
- 1. first item
- 2. second item
- 3. third item
+ "Hello World": Your First C++ Program
+ ----------
+```cpp
+#include <iostream>
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
+int main()
+{
+    std::cout << "Hello World!\n";
+}
+```
 
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
+* `#include` is a preprocessor directive used to include headers in programs. `#include <iostream>` includes the standard input/output library.
+* All preprocessor directives are preceded by a # sign and are processed by the preprocessor before the source code is compiled.
+* The `main()` function is the entry point to C++ programs. Execution begins here, and all C++ programs must have exactly one `main()` function.
+* `std::cout` outputs a string to the console, `Hello World!` in this case, and then it moves the cursor to the next becuase of the `\n` character which represent a newline.
+* `std` is the standard namespace in C++. It contains all the standard library functions and objects, like `cout`, `cin`, and many others. 
+* A namespace is like a container that holds a set of identifiers (e.g. functions and classes) to avoid name conflicts. 
+* Functions and objects defined inside the std namespace must be prefixed `std::` unless the compiler is told to automatically look inside std with `using namespace std`;
 
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
+~~~cpp
+#include <iostream>
+using namespace std;
 
-~~~
-define foobar() {
-    print "Welcome to flavor country!";
+int main()
+{
+    cout << "Hello World!\n";
 }
 ~~~
-
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
-
-~~~python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
-~~~
-
-
-
-### An h3 header ###
-
-Now a nested list:
-
- 1. First, get these ingredients:
-
-      * carrots
-      * celery
-      * lentils
-
- 2. Boil some water.
-
- 3. Dump everything in the pot and follow
-    this algorithm:
-
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
-
-    Do not bump wooden spoon or it will fall.
-
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
-
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
-
-[^1]: Footnote text goes here.
-
-Tables can look like this:
-
-size  material      color
-----  ------------  ------------
-9     leather       brown
-10    hemp canvas   natural
-11    glass         transparent
-
-Table: Shoes, their sizes, and what they're made of
-
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
-
---------  -----------------------
-keyword   text
---------  -----------------------
-red       Sunsets, apples, and
-          other red or reddish
-          things.
-
-green     Leaves, grass, frogs
-          and other things it's
-          not easy being.
---------  -----------------------
-
-A horizontal rule follows.
-
-***
-
-Here's a definition list:
-
-apples
-  : Good for making applesauce.
-oranges
-  : Citrus!
-tomatoes
-  : There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term/definition pair to spread things out more.)
-
-Here's a "line block":
-
-| Line one
-|   Line too
-| Line tree
-
-and images can be specified like so:
-
-![example image](example-image.jpg "An exemplary image")
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
+* The `using` directive can be used to provide access to all namespace qualifiers in the current scope. Use with care to avoid name conflicts.
