@@ -19,14 +19,14 @@ Visual Studio IDE
 
  "Hello World": Your First C++ Program
  ----------
-```cpp
+~~~cpp
 #include <iostream>
 
 int main()
 {
     std::cout << "Hello World!\n";
 }
-```
+~~~
 
 * `#include` is a preprocessor directive used to include headers in programs. `#include <iostream>` includes the standard input/output library.
 * All preprocessor directives are preceded by a # sign and are processed by the preprocessor before the source code is compiled.
