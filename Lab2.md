@@ -10,13 +10,14 @@ Practice Tasks
 
 5. Make the car move slowly along the x-axis from one end of the window to another. I suggest using a variable in the initialisation section to store the speed of the car and another to store the direction (i.e. 1 or -1).
 
-6. Toggle the car movement on mouse click i.e. if the car is moving and the left mouse button is clicked, then it should stop, and if it si stopped and the left mouse button is clicked then it should start moving. Hint: change the value of teh car speed variable on mouse click.
+6. Toggle the car movement on mouse click i.e. if the car is moving and the left mouse button is clicked, then it should stop, and if it si stopped and the left mouse button is clicked then it should start moving. Hint: use a boolean varaible to determine whether the car is moving or not, and check input events sepcificlaly if `event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left`.
+
 
 7. Use variable timestep to make sure the car moves from one end of the window to the other in 5 seconds.
 
 8. Play sound.oog when the car is moving.
 
-9. Create an array of `sf::Sprite` with 50 elements (all elements should have the same block.png texture). Use a for loop to position elements of the array so that you create various shapes e.g. a pyramid, stairs, and a rectangular wall.
+9. Create an array of `sf::Sprite` with 50 elements (all elements should have the same 70 x 70 block.png texture). Use a for loop to position elements of the array so that you create various shapes e.g. a pyramid, stairs, and a rectangular wall.
 
 Main Activity: Growth Game
 --------
