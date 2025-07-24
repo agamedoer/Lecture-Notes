@@ -4,7 +4,7 @@ Practice Tasks
 
 2. Create and draw a `sf::CircleShape` named `ball` with a radius of 25. Remember to declare it in the initialisation section, and draw it in the game-loop. Set its origin to its centre, and display it perfectly in the centre of your program window.
 
-3. Use arrow keys to reposition ball so that pressing `sf::Keyboard::Left` moves it along the x-axis to the left wall of the window, pressing `sf::Keyboard::Right` moves it along the x-axis to the right wall of the window, pressing `sf::Keyboard::Up` moves it along the y-axis to the top wall of the window, pressing `sf::Keyboard::Down` moves it along the y-axis to the bottom wall of the window, and pressing `sf::Keyboard::Enter` re-centres to the middle of the window.
+3. Use arrow keys to reposition ball so that pressing `sf::Keyboard::Left` moves it along the x-axis to the left wall of the window, pressing `sf::Keyboard::Right` moves it along the x-axis to the right wall of the window, pressing `sf::Keyboard::Up` moves it along the y-axis to the top wall of the window, pressing `sf::Keyboard::Down` moves it along the y-axis to the bottom wall of the window, and pressing `sf::Keyboard::Return` re-centres to the middle of the window.
 
 4. Now create a sf::Sprite named car, set its texture to car.png (remember to load the image first using an sf::Texture object). Position and draw it at the top-left corner of your program window.
 
