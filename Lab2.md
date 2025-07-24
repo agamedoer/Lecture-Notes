@@ -21,15 +21,34 @@ Practice Tasks
 
 Main Activity: Growth Game
 --------
-1. Create and draw a `sf::CircleShape` named `player` with a radius of 20. Remember to declare it in the initialisation section, and draw it in the game-loop. Set its origin to its centre.
-2. Set its initial position to a random x and y points within the size of the window. You can generate and store the random position in a `sf::Vector2f` using the code below in the initialisation section.
-3. The `player` should be moveable using arrow keys in all directions, but it should not be possible to move it out of view. Test your program at this point to make sure it works before proceeding.
-4. Next, let's create food for `player` to eat. In the initialisation section create an array of 3 `sf::RectangleShape` objects named `foods`. Set the size of each element to sf::Vector2f(2.0f,2.0f), generate random initial positions for them as you did the player, and render them in their positions in the game-loop (use a for loop to inialise and render elemnts of an array). Now when you run the porhgtram you should have the food items and the plyer all positioned in randomw points, with the player being able to move.
-5. We now need to check if the player has eaten any of the food items, we will use a simple collision check for this. It may be best to define a simple sphere to point collision function that we can use- this fucntion will take it the position of teh player ad the position of a food object, then check ot see if the distance between teh two is less than the radisu of player, if so then the two are colliding and we will assume that the player has eaten that food object. The code for this function is provided below, copy it and paset it before your main function.
+1. Create and draw a `sf::CircleShape` named `player` with a radius of 20 and fill color `sf::Color::Blue`. Remember to declare it in the initialisation section, and draw it in the game-loop. Set its origin to its centre.
+2. Set its initial position to a random x and y points within the size of the window. You can generate and store the random position in a `sf::Vector2f` using the code below in the initialisation section. Also add `#include <random>` at the top of your code.
+~~~cpp
+std::random_device rd;
+std::uniform_real_distribution<float> randX(0, WIDTH);
+std::uniform_real_distribution<float> randY(0, HEIGHT);
+float randomXPosition = randX(rd);
+float randomYPosition = randY(rd);
+sf::Vector2f randomPosition = sf::Vector2f(randomXPosition, randomYPosition);
+player.setPosition(randomPosition);
+~~~
+4. The `player` should be moveable using arrow keys in all directions, but it should not be possible to move it out of view. Test your program at this point to make sure it works before proceeding.
+5. Next, let's create food for `player` to eat. In the initialisation section create an array of 3 `sf::RectangleShape` objects named `foods`. Set the size of each element to sf::Vector2f(5.0f,5.0f), generate random initial positions for them as you did the player, set their fill color to `sf::color::Yellow`, and render them in their positions in the game-loop (use a for loop to inialise and render elemnts of an array). Now when you run the porhgtram you should have the food items and the plyer all positioned in randomw points, with the player being able to move.
+6. We now need to check if the player has eaten any of the food items, we will use a simple collision check for this. It may be best to define a simple sphere to point collision function that we can use- this fucntion will take it the position of teh player ad the position of a food object, then check ot see if the distance between teh two is less than the radisu of player, if so then the two are colliding and we will assume that the player has eaten that food object. The code for this function is provided below, copy it and paset it before your main function.
+~~~cpp
+bool checkCollision(int playerRadius, sf::Vector2f playerPos, sf::Vector2f foodPos)
+{
+    float dx = playerPos.x - foodPos.x;
+    float dy = playerPos.y - foodPos.y;
+    float distance = std::sqrt(dx * dx + dy * dy);
 
-6. In the game-loop, after the code that moves player, check for collision between player and  all elements of foods busing a for-loop to check if checkCollision returns true if you call it with the positon of the player and the position of foods elements. If it does, then increase the radius of player by 0.01% and set the position of the eat foods element a new random position (it may a good idea to create a function that returns a random `sf::Vector2f` positon if you have not done so aleady).
-7. Now test your code to see that it works.
-8. Next let's provide some visual fedback for our player. USe `sf::Font` to provide a simple HUD at the top right corner of the screen. COlor the text blue, over two lines provide the current raidus of player, and score (use a score variable that is incremented by 1 whenever the use eats food.
+    return distance < playerRadius;
+}
+~~~
+
+7. In the game-loop, after the code that moves player, check for collision between player and  all elements of foods busing a for-loop to check if checkCollision returns true if you call it with the positon of the player and the position of foods elements. If it does, then increase the radius of player by 0.01% and set the position of the eat foods element a new random position (it may a good idea to create a function that returns a random `sf::Vector2f` positon if you have not done so aleady).
+8. Now test your code to see that it works.
+9. Next let's provide some visual fedback for our player. USe `sf::Font` to provide a simple HUD at the top right corner of the screen. COlor the text blue, over two lines provide the current raidus of player, and score (use a score variable that is incremented by 1 whenever the use eats food.
 
 
 Extra Activity
