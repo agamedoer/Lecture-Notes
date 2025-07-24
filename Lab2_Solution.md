@@ -255,6 +255,101 @@ Main Activity: Growth Game
 
 6. In the game-loop, after the code that moves player, check for collision between player and  all elements of foods busing a for-loop to check if checkCollision returns true if you call it with the positon of the player and the position of foods elements. If it does, then increase the radius of player by 0.01% and set the position of the eat foods element a new random position (it may a good idea to create a function that returns a random `sf::Vector2f` positon if you have not done so aleady).
 7. Now test your code to see that it works.
+~~~cpp
+#include <SFML/Graphics.hpp>
+#include <random>
+
+constexpr int WIDTH = 800;
+constexpr int HEIGHT = 600;
+
+sf::Vector2f generatePosition()
+{
+    std::random_device rd;
+    std::uniform_real_distribution<float> randX(0, WIDTH);
+    std::uniform_real_distribution<float> randY(0, HEIGHT);
+    float randomXPosition = randX(rd);
+    float randomYPosition = randY(rd);
+    sf::Vector2f randomPosition = sf::Vector2f(randomXPosition, randomYPosition);
+    return randomPosition;
+}
+
+bool checkCollision(int playerRadius, sf::Vector2f playerPos, sf::Vector2f foodPos)
+{
+    float dx = playerPos.x - foodPos.x;
+    float dy = playerPos.y - foodPos.y;
+    float distance = std::sqrt(dx * dx + dy * dy);
+
+    return distance < playerRadius + 5;
+}
+
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "SFML");
+    sf::CircleShape player(20);
+    player.setFillColor(sf::Color::Blue);
+    player.setOrigin(20 / 2, 20 / 2);
+   
+    sf::RectangleShape foods[3];
+    for (int i = 0; i < 3; i++)
+    {
+        foods[i].setSize(sf::Vector2f(5, 5));
+        foods[i].setPosition(generatePosition());
+        foods[i].setFillColor(sf::Color::Yellow);
+    }
+   
+    player.setPosition(generatePosition());
+
+    // Start the game loop
+    while (window.isOpen())
+    {
+        // Process events
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            // Close window: exit
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        //check if the Up key is pressed
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && player.getPosition().y>0)
+        {
+            player.move(0, -0.02);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && player.getPosition().y < HEIGHT)
+        {
+            player.move(0,0.02);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && player.getPosition().x > 0)
+        {
+            player.move(-0.02, 0);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && player.getPosition().x < WIDTH)
+        {
+            player.move(0.02, 0);
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (checkCollision(player.getRadius(), player.getPosition(), foods[i].getPosition()))
+            {
+                player.setRadius(player.getRadius() * 1.1);
+                foods[i].setPosition(generatePosition());
+            }
+        }
+       
+        window.clear();
+        for (int i = 0; i < 3; i++)
+        {
+            window.draw(foods[i]);
+        }
+        window.draw(player);
+        window.display();
+   
+    }
+    return EXIT_SUCCESS;
+}
+~~~
 8. Next let's provide some visual fedback for our player. USe `sf::Font` to provide a simple HUD at the top right corner of the screen. COlor the text blue, over two lines provide the current raidus of player, and score (use a score variable that is incremented by 1 whenever the use eats food.
 
 
