@@ -86,24 +86,16 @@ int main()
 		//updating currentPlayer
 	}
 }
-   
-8. But what happens if a player wins the game or if there are no more valid moves? Define another function called `checkBoard` which takes in a char array `char board[]` as its only parameter and returns a boolean. The function checks to see if the chacraters in [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8] and [2,4,6] are the same, if so prints that the chacater has won and return true. Else it checks to see if at least one element in `board` is ' ' and return false if that's the case, else print that the game has ended in a draw and return true.
+~~~
+8. But what happens if a player wins the game or if there are no more valid moves? Define another function called `checkBoard` which takes in a char array `char board[]` as its only parameter and returns a boolean. The function checks to see if the chacraters in [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8] and [2,4,6] are the same (and not ' '), if so prints that the chacater has won and return true. Else it checks to see if at least one element in `board` is ' ' and return false if that's the case, else print that the game has ended in a draw and return true.
 
-9. Now at the top of the main function, declare two new variables `char currentPlayer` and `bool gameover`. Initialise `currentPlayer` to `x` and `gameover` to `false`.
-10. Refactor the while loop in the main fucntion as follows:
-
-   a. Its should execute while `gameover` is `false`.
-   
-   b. Call `drawBoard` and pass the char array.
-
-   c. Use a while loop to print an appropriate message after checking who the current player is e.g. "Player X: Choose a poisiton to ake your move" and all makeMove with the currentPlayer, input position, and the board as arguments, until a valid move has been made.
-
-   d. Update current player i.e. if it is currently x then change it to o, else if its is currently o, then change it to x.
-
-   e. call `checkBoard` with the board as an argument.
+9. The final thing to do is to call checkBoard aftere updating `currentPlayer` and assigning the boolean it retuens to the `gameover` variable. This will keep the gameloop running until a player wins or the game ends in a draw. 
 
 Extra Activity
 ------------
+1. Create your own text adeventure
+2. Create a hangman game
+3. Create a simple calculator
 
 
 
