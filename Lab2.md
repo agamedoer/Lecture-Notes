@@ -49,6 +49,8 @@ bool checkCollision(int playerRadius, sf::Vector2f playerPos, sf::Vector2f foodP
 7. In the game-loop, after the code that moves player, check for collision between player and  all elements of foods busing a for-loop to check if checkCollision returns true if you call it with the positon of the player and the position of foods elements. If it does, then increase the radius of player by 0.01% and set the position of the eat foods element a new random position (it may a good idea to create a function that returns a random `sf::Vector2f` positon if you have not done so aleady).
 8. Now test your code to see that it works.
 9. Next let's provide some visual fedback for our player. USe `sf::Font` to provide a simple HUD at the top right corner of the screen. COlor the text blue, over two lines provide the current raidus of player, and score (use a score variable that is incremented by 1 whenever the use eats food.
+10. Add a super food item, it should appear after a player eats 5 food objects. If eaten by the player, the player should grow by 0.2%. The super food should only be on the screen for 5 seconds, and disappears if not eaten. If the super food disappear, its should appear after 5  items are eaten by the player after the super foods diseaperance.
+11. Add a fast food item, its similar to the super food above, however it doubles the player's speed for 10 seconds, and appears after 10 food items are eaten.
 
 
 Extra Activity
