@@ -59,13 +59,38 @@ BY the end of this activity you should have created a Tic-Tac-Toe game that runs
 
 3. Test `drawBoard` by drawing a board intialised with random chars, make sure it works before moving to the next step.
 
-4. Now define another function called `makeMove` which takes has the following paramters: `char currentPlayer`, `integer position`, and  `char board[]` and returns a boolean. First it checks to see that position is non-negative and it is less than 9, if not it prints out a message to say an invalid move has been made and returns false. Then it checks the `board` element in `position`, if it its ' ', then it is replaced by `currentPlayer` and the function returns true, else it it prints out a message to say an invalid move has been made and returns false.
+4. Now define another function called `makeMove` which takes has the following paramters: `char currentPlayer`, `int position`, and  `char board[]` and returns a boolean. First it checks to see that position is non-negative and it is less than 9, if not it prints out a message to say an invalid move has been made and returns false. Then it checks the `board` element in `position`, if it its ' ', then it is replaced by `currentPlayer` and the function returns true, else it it prints out a message to say an invalid move has been made and returns false.
 
-5. Let's now test the above method to see that it works. In your main method, after `drawBoard` is called, define a boolean named validMove initialised to false and add a while loop that executes as long as validMove is false. Inside the while loop print out an apporpriat message to prompt the current player to choose a position for their next move (use the value of currentPlayer to determine whose whethe its it x's or o's turn). Then use `cin` take the user input, store it in a local int called `pos`, and call `makeMove` with `currentPlayer`, `pos`, and `board` as arguments while assigning the boolean it returns to `validMove`.
+5. Let's now test the above method to see that it works. In your main method, after `drawBoard` is called, define a boolean named `validMove` initialised to false and add a while loop that executes as long as `validMove` is false. Inside the while loop print out an apporpriat message to prompt the current player to choose a position for their next move (use the value of currentPlayer to determine whose whethe its it x's or o's turn). Then use `cin` take the user input, store it in a local int called `pos`, and call `makeMove` with `currentPlayer`, `pos`, and `board` as arguments while assigning the boolean it returns to `validMove`. Outside the of while loop, update the value of currentPlayer - if its X update it to O, if its O update it to X.
+
+6. Run the program to test it. Inputting invalid moves will lead to an invalid move message being printed out, followed by a drwawing of the board and a prompt to make another move. Valid moves on the other hand, will end the program - let's fix that in the next step.
+
+7. To make sure the game does not end after every valid input, we will create a game-loop by moving all the code we have added after initialising the board array into a while loop that runs as long as `gameover` is false. Your main function will now look something like this
+
+~~~cpp
+int main()
+{
+	char currentPlayer = 'X';
+	bool gameover = false;
+
+	char board[9];
+	for(int i = 0; i<9; i++)
+	{
+		board[i] = ' ';
+	}
+
+	while (gameover == false)
+	{
+		//call to drawBoard
+		//while loop that calls makeMove
+		//updating currentPlayer
+	}
+}
    
-7. Next, define another function called `checkBoard' which takes in a char array as uts only parameter. The function checks to see if the chacraters in  _____ are the same, if so prints that the chacarter has won, else it checks to see if at least one element is a " ", if not it prinys that the game has ended in a draw.
-8. Now at the top of the main function, declare two new variables `char currentPlayer` and `bool gameover`. Initialise `currentPlayer` to `x` and `gameover` to `false`.
-9. Refactor the while loop in the main fucntion as follows:
+8. But what happens if a player wins the game or if there are no more valid moves? Define another function called `checkBoard` which takes in a char array `char board[]` as its only parameter and returns a boolean. The function checks to see if the chacraters in [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8] and [2,4,6] are the same, if so prints that the chacater has won and return true. Else it checks to see if at least one element in `board` is ' ' and return false if that's the case, else print that the game has ended in a draw and return true.
+
+9. Now at the top of the main function, declare two new variables `char currentPlayer` and `bool gameover`. Initialise `currentPlayer` to `x` and `gameover` to `false`.
+10. Refactor the while loop in the main fucntion as follows:
 
    a. Its should execute while `gameover` is `false`.
    
