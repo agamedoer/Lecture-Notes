@@ -52,7 +52,7 @@ int main()
 
 Main Activity - Tic Tac Toe
 ------------
-BY the end of this activity you should have created a Tic-Tac-Toe game that runs in the console. The program will have while loop in the main function that will keep calling functions that aks for player input, update the board, and check for win condition, continously until a player wins or there are no more valid moves.
+BY the end of this activity you should have created a Tic-Tac-Toe game that runs in the console. The program will have while loop in the main function that will keep calling functions that aks for player input, update the board, and check for the win/loss/draw condition, continously until a player wins or there are no more valid moves.
 1. In the main function, declare a 9 element `char` array named `board`, this will be used to represent the game board; use a for-loop to initialise all elements of `board` to ' '. Then declare a `char currentPlayer` and initialise it to 'x', and a `boolean gameover` and initialise it to `false`'
 
 2. Outside of the main function, define a function named `drawBoard`. The function should have one paramter, a `char` array named `board` and return void. Inside the funtion, print `board` to the console as a 3 by 3 grid of char (first row elements: 0 1 2, second rowelemnts: 3 4 5, third row elemnts: 6 7 8). To simplify our task, we will assume that the `board` will always have 9 elements. Hint: use a for loop and the % operator to print `board`.
@@ -79,7 +79,7 @@ int main()
 		board[i] = ' ';
 	}
 
-	while (gameover == false)
+	while (gameover == false) //game-loop
 	{
 		//call to drawBoard
 		//while loop that calls makeMove
@@ -87,9 +87,9 @@ int main()
 	}
 }
 ~~~
-8. But what happens if a player wins the game or if there are no more valid moves? Define another function called `checkBoard` which takes in a char array `char board[]` as its only parameter and returns a boolean. The function checks to see if the chacraters in [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8] and [2,4,6] are the same (and not ' '), if so prints that the chacater has won and return true. Else it checks to see if at least one element in `board` is ' ' and return false if that's the case, else print that the game has ended in a draw and return true.
+8. But what happens if a player wins the game or if there are no more valid moves? Define another function called `checkBoard` which takes in a char array `char board[]` as its only parameter and returns a boolean. The function checks to see if the chacraters in [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8] and [2,4,6] are the same (and not ' '), if so its prints that the character has won and returns true. Else it checks to see if at least one element in `board` is ' ' and return false if that's the case, else that means there are no more moves left so it prints that the game has ended in a draw and returns true.
 
-9. The final thing to do is to call checkBoard aftere updating `currentPlayer` and assigning the boolean it retuens to the `gameover` variable. This will keep the gameloop running until a player wins or the game ends in a draw. 
+9. The final thing to do is to call `checkBoard` in the game-loop after updating `currentPlayer` and assigning the boolean it retuens to the `gameover` variable. This will keep the gameloop running until a player wins or the game ends in a draw. 
 
 Extra Activity
 ------------
