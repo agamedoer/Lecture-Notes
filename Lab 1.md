@@ -16,7 +16,7 @@ int main()
 }
 ~~~
 
-2. Run the program below. What error does the compiler show? Can you tell why the error occurs and how it can be fixed?
+2. Run the program below. What error does the compiler show? Why does the error occur and how can it be fixed?
 ~~~cpp
 #include <iostream>
 
