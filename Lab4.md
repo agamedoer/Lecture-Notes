@@ -89,6 +89,17 @@ Main Activity: Simple Pong
 Extra Activity
 ------------
 
+1. Extend the particle system
+
+   a. Before the particle system settles down, it looks ugly. Fix this by initialising particles in batches when the system starts rather than initialising them all at once in the constructor.
+
+   b. Experiment with evolving the colour of the particles. One possible scheme could be a ‘cooling’ colour curve - particles start white, then cool through yellow to red as they evolve. You will need to add extra data to the particle class and modify the draw function. Try to add some randomness to this so that not all particles evolve the same way. At this point, you may start to wonder if the Draw functionality would be better off in the Particle class, and you would probably be right. Make that change while you are at it. What will you need to move from the ParticleSystem class to the Particle class?
+
+  c. Try adding a ‘wind’ effect. You could either make the wind randomly variable or switch the wind on and off based on keyboard/mouse input. Hint: wind can be modelled by a horizontal acceleration, just like gravity but in the x direction instead of the y direction.
+
+2. Create a Fireworks system. Use the particle system as a base, have fewer particles released at small intervals (no gravity), then then explode into several other particles on reaching a minimum height.
+
+3. Create a simple version of the Tower of Hanoi game, this will give you an oppurutnity to practice ysing shared pointers.
 
 
 
