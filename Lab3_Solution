@@ -1,0 +1,40 @@
+~~~cpp
+#pragma once
+#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <random>
+
+class PongBall
+{
+	sf::CircleShape ball;
+	sf::Vector2f velocity;
+	float radius;
+
+public:
+	PongBall(): radius(10.0f)
+	{
+		ball.setRadius(radius);
+		ball.setPosition(400, 300);
+		ball.setFillColor(sf::Color::White);
+		ball.setOrigin(radius / 2, radius / 2);
+
+		std::random_device rd;
+		std::uniform_real_distribution<float> randVel(-0.1, 0.1);
+		float velX = randVel(rd);
+		float velY = randVel(rd);
+		velocity = sf::Vector2f(velX, velY);
+	}
+
+	void draw(sf::RenderWindow& window)
+	{
+		window.draw(ball);
+	}
+
+	void update()
+	{
+		if (ball.getPosition().x < ball.getRadius() || ball.getPosition().x>800 - ball.getRadius()) velocity.x *= -1;
+		if (ball.getPosition().y < ball.getRadius() || ball.getPosition().y>600- ball.getRadius()) velocity.y *=-1;
+		ball.move(velocity);
+	}
+};
+~~~
