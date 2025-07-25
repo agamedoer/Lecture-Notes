@@ -1,6 +1,6 @@
 Practice Tasks
--------------
-1. Copy the code below into the source.cpp file of your Visual Studio C++ console project. Then update date it to so that a greeting is printed to the console whenever the user inputs a name. For example, if the user inputs the name Mike, then print "Hi Mike!" or "Good morning Mike!".
+--------------
+1. Create a new Visual Studio C++ console project; you can use the same project to complete this section, just clean the `main` function after each task and save any code you will like to revisit later in a separate document. Copy the code provided below to the `Source.cpp` file of the project you created, then update it so that a greeting is printed to the console whenever the user inputs a name. For example, if the user inputs the name "Mike", then print "Hi Mike!" or "Good morning Mike!".
    
 ~~~cpp
 #include <iostream>
