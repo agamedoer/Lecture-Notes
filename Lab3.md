@@ -1,7 +1,7 @@
 Practice Tasks
 -------------
 
-Main Activity: Pong
+Main Activity: Simple Pong
 --------
 1. Download the SFML project template from moodle, unpack the zip file, and open the solution file (the file with .sln extension) in Visual Studio.
 2. Click the play button to build and run the project (build must be set to x86 for the project to compile).
