@@ -123,6 +123,7 @@ Extra Activity
 ------------
 1. Update the asteroid clone game provided to have diverse types of obstacles. Using a base Onbstacle class, implement different obstacle classes with differen behaviours e.g. Asteroid (classic obstacle, drifts & spins, creates a swarm when hit), Comet (faster, maybe leaves a trail), explosive (slow, stationary, explodes if close to players), swarm (2 or 3 tiny obstacles moving together).
 
+2. Create Snake using pointers. The pickups should all inherit from the same base class and be randomly generated with different perks e.g. regular growth, increased speed, decreased speed, invert head, invincibility.
 
 
 
