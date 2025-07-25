@@ -79,7 +79,7 @@ bool checkCollision(sf::Vector2f batPosition, sf::Vector2f batSize, sf::Vector2f
 Extra Activity
 ------------
 1. Extend the pong game to have two players, with different keys. A player gets a point if they are able to get the ball to hit the wall behind their opponent. Display the score on the screen and end if any of the players gets 5 points.
-2.USe the pong game as a base to create a breakout game.
+2. Use the pong game as a base to create a breakout game.
 3. Create a memomry game program.
 
 
