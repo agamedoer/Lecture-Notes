@@ -101,9 +101,9 @@ for (int i = 0; i < 8; i++)
 
 Extra Activity
 ------------
-1. Create your own text adeventure
-2. Create a hangman game
-3. Create a simple calculator
+1. Tidy up the the noughts and crosses program. Get rid of all magic numbers, eliminate all assumptions about array size by passing it as a paramter or caluclating it from the array, add error checking for invalid inputs.
+2. Create your own text adventure game. You are free to design it however you like, but I suggest sketching out a plan before you start coding. You can store room descriptions, items, options and actions in arrays; 2D arrays can be useful for storing a fixed number of actions and/or options for each room. Use conditionals to check the player’s responses and decide outcomes. Organize your code with functions that you can call as needed, and don’t forget to include a clear win or loss condition.
+3. Create a simple console hangman game. Use a `char` array to store a fixed secret word and another array to keep track of the player’s correct guesses. Write functions to display the word with guessed letters and underscores, get the player’s letter guess, and update the word based on whether the guess is correct. Use a while loop to keep the game running until the player either guesses the whole word or runs out of allowed wrong guesses. Track the number of wrong guesses, check for win or loss conditions, and display an appropriate message when the game ends.
 
 
 
