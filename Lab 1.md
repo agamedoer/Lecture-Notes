@@ -49,9 +49,9 @@ int main()
 
 Main Activity - Noughts and Crosses
 ------------
-1. By the end of this activity you should have a simple noughts and crosses game that runs in the console. Create a new Visual Studio C++ empty project and make sure the `main` function is empty. We will use a `char` array to store the game board, define functions to draw the board in the console, get user input and place player moves on the board, and check the board for win/loss/draw conditions. These functions will be called in a while-loop to keep the game going until a player wins or no more valid moves are left.
+1. By the end of this activity you should have a simple noughts and crosses game that runs in the console. Create a new Visual Studio C++ empty project, add a new file `main.cpp` to the `Source Files` folder and add an empty `main` function to it, you can copy the hello world example from the slides and delete the print statement inside the main function. In the next steps, we will use a `char` array to store the game board, define functions to draw the board in the console, get user input and place player moves on the board, and check the board for win/loss/draw conditions. These functions will be called in a while-loop to keep the game going until a player wins or no more valid moves are left.
 
-2. Start by declare a 9 element `char` array named `board` in the `main` function. This will be used to represent the game board; use a for-loop to initialise all elements of `board` to ' '. Then declare a `char currentPlayer` and initialise it to 'X', and `boolean gameover` and initialise it to `false`.
+2. Declare a 9 element `char` array named `board` in the `main` function. This will be used to represent the game board; use a for-loop to initialise all elements of `board` to ' '. Then declare a `char currentPlayer` and initialise it to 'X', and `boolean gameover` and initialise it to `false`.
 
 3. Outside of the `main` function, define a function named `printBoard`. The function should have one paramter, a `char` array named `board` and return void. Inside the funtion, print `board` to the console as a 3 by 3 grid of `char` (first row elements: 0 1 2, second rowelemnts: 3 4 5, third row elemnts: 6 7 8). To simplify our task, we will assume that the `board` will always have 9 elements. Hint: use a for loop and the % operator to print `board`.
 
