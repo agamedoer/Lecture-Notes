@@ -1,21 +1,20 @@
 Practice Tasks
 ------------
-1. To complile SFML programs, SFML needs to be downloaded, added to your VS Studio project, and linked so your code can use its graphics, window, and system features. Doing this before you complete each lab task will be time consuming, therefore a default SFML project template is provided for you to use, and specific starter projects will be provided for some tasks. Download the tutorial starter project using this link or through Moodle. Extract the project, and start it by executing the .sln file in the project folder. If the code editor is blank, open Solution Explorer, select the Source Files folder and double click main.cpp.
+1. To complile SFML programs, SFML needs to be downloaded, added to your VS Studio project, and linked so your code can use its graphics, window, and system features. Doing this before you complete each lab task will be time consuming, therefore a default SFML project template is provided for you to use, and specific starter projects will be provided for some lab activities. Download the template project using this link or through Moodle. Extract the project, and start it by executing the file with the `.sln`extension in the project folder. If the code editor is blank, open `Solution Explorer`, select the `Source Files` folder and double click `main.cpp`.
 
-2. Create and draw a `sf::CircleShape` named `ball` with a radius of 25. Remember to declare it in the initialisation section, and draw it in the game-loop. Set its origin to its centre, and display it perfectly in the centre of your program window.
+2. You will find code delcaring a `sf::CircleShape` named `ball` in the initialisation section, as well as code to draw `ball` in the game loop, run the program to view the result. Now update the radius of `ball` to `30`, set its origin to its center, `sf::Vector2f(30,30)`, and position it at the centre of your window.
 
-3. Use arrow keys to reposition ball so that pressing `sf::Keyboard::Left` moves it along the x-axis to the left wall of the window, pressing `sf::Keyboard::Right` moves it along the x-axis to the right wall of the window, pressing `sf::Keyboard::Up` moves it along the y-axis to the top wall of the window, pressing `sf::Keyboard::Down` moves it along the y-axis to the bottom wall of the window, and pressing `sf::Keyboard::Return` re-centres to the middle of the window.
+3. Implement input handling so that pressing `sf::Keyboard::Left` moves `ball` along the x-axis to the left wall of the window, pressing `sf::Keyboard::Right` moves it along the x-axis to the right wall of the window, pressing `sf::Keyboard::Up` moves it along the y-axis to the top wall of the window, pressing `sf::Keyboard::Down` moves it along the y-axis to the bottom wall of the window, and pressing `sf::Keyboard::Return` re-centres to the middle of the window.
 
-4. Now create a sf::Sprite named car, set its texture to car.png (remember to load the image first using an sf::Texture object). Position and draw it at the top-left corner of your program window.
+4. Now create a `sf::Sprite` named `car`, set its texture to `assets/car.png` (remember to load the image first using an `sf::Texture` object). Position and draw it at the top-left corner of your program window.
 
-5. Make the car move slowly along the x-axis from one end of the window to another. I suggest using a variable in the initialisation section to store the speed of the car and another to store the direction (i.e. 1 or -1).
+5. Make `car` move slowly along the x-axis from one end of the window to another. I suggest using a variable in the initialisation section to store the speed of the `car`.
 
-6. Toggle the car movement on mouse click i.e. if the car is moving and the left mouse button is clicked, then it should stop, and if it si stopped and the left mouse button is clicked then it should start moving. Hint: use a boolean varaible to determine whether the car is moving or not, and check input events sepcificlaly if `event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left`.
+6. Toggle `car` movement on mouse click i.e. if `car` is moving and the left mouse button is clicked, then it should stop, and if it is stopped and the left mouse button is clicked then it should start moving. One way of doing this to by adding a boolean variable to track the movement state (i.e. 0 or 1) of car, update it on mouse click, and use an if-statement to check its value before calling the code that moves `car`.
 
+7. Use variable timestep to make sure `car` moves from one end of the window to the other in 5 seconds.
 
-7. Use variable timestep to make sure the car moves from one end of the window to the other in 5 seconds.
-
-8. Play sound.oog when the car is moving.
+8. Play `this sound` when the `car` is moving, and stop it when `car` stops.
 
 9. Create an array of `sf::Sprite` with 50 elements (all elements should have the same 70 x 70 block.png texture). Use a for loop to position elements of the array so that you create various shapes e.g. a pyramid, stairs, and a rectangular wall.
 
