@@ -1,5 +1,5 @@
 Week 1: Introduction to C++
-============
+=============
 
 The C++ Programming Language 
 ------------
